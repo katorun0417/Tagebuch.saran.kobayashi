@@ -4,30 +4,35 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diary</title>
+
 <style>
   body {
     background-color: #fff;
     color: #000;
     font-family: "游ゴシック体", "Yu Gothic", sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin: 0;
+    padding: 40px 0; /* 上下にゆとりを持たせる */
+    display: flex;
+    justify-content: center;
   }
 
   #container {
-    text-align: left;
     width: 60%;
     max-width: 700px;
+    min-width: 300px;
     line-height: 1.8;
-    font-size: 14px;
-    transform: translateY(-10%); /* 本文をやや上に */
+    font-size: 15px;
+  }
+
+  img {
+    max-width: 100%; /* スマホでも画像がはみ出ない */
+    height: auto;
+    display: block;
+    margin: 20px 0;
   }
 
   button {
-    margin-top: 50px;
+    margin-top: 40px;
     background: none;
     border: none;
     color: #888;
@@ -35,17 +40,30 @@
     cursor: pointer;
   }
 
-  button:hover {
-    color: #444;
+  /* ===== スマホ最適化 ===== */
+  @media (max-width: 600px) {
+    body {
+      padding: 20px; /* スマホは左右余白も必要 */
+    }
+
+    #container {
+      width: 100%;
+      line-height: 1.9;
+      font-size: 16px;  /* 読みやすい文字サイズ */
+    }
+
+    button {
+      margin-top: 30px;
+      font-size: 13px;
+    }
   }
 </style>
+
 </head>
 <body>
-  <div id="container"></div>
-  <button onclick="showRandomDiary()"> ▶︎ </button>
 
-  <script>
-    const diaries = [
+<div id="container">
+  
 `2025.6.30<br><br>
 狭い箱のような寝室で、頭を熱くして心臓をどきどきさせながら横たわる夜です。ときおり誰かのはあ、というため息や、足をゴソゴソさせる音が途切れなく聞こえてきます。私は記憶の詰まった袋。私の皮膚はもしかしたら、白いベッドシーツと変わりないのかもしれません。するするとしているし、同時にパリパリと乾燥しています。熱を包んでいるからでしょう。瞼の裏には、記憶の衝突のために火花が散っています。火花は興奮と同時に焦りを誘発し、私の眠りを妨げます。このまま夜が明けるのでしょうか？しかし私が入っている箱は、外の時間から、天気から、情報から遠く隔てられ、それを知る術はありません。どうか時間が経っていますように。その中で、慈悲深い誰かの心の中に、偶然私の名前が浮かびますように。夢中で息をします。まるでそれが祈りでもあるかのように。`,
 
@@ -166,16 +184,9 @@
 `2025.11.15<br><br>
 どうしてみんな、自分によく似合うものがわかるのだろう？自分の食べたいものがわかるのだろう？自分の望みが、自分の愛するものが？ふるいにかけて、残ったものを信頼する。ふるいとはただの時間であり、私がすることは何もない。待つ。長い汽車の乗車時間に必要なものだけを手に入れる。耐える時間を少し和らげてくれるものだけ。私の舌を少し甘くしてくれるもの。額を冷やしてくれるもの。何か少し書き留めるもの。私が考えるだけの機械として生まれたのだったら。頭の中で、他の人が思いつかないというだけの無益な考え、意外なインスピレーションを生み出して、それを書き留めるだけの存在であったなら。私の存在は十分であるだろうか？粉砂糖のかかったクッキーを食べるだけの十分な理由。名前を呼ぶ声を聞き、その合唱に恐怖しながら過ごす夕べ。 用意された運命をこなすだけでこんなに時間がかかるなんて。野菜を蒸す時間すら惜しい。夜は眠る。指輪を外し、意識を手放す。`
 
+</div>
 
-];
+<button onclick="history.back()">back</button>
 
-    function showRandomDiary() {
-      const randomIndex = Math.floor(Math.random() * diaries.length);
-      document.getElementById('container').innerHTML = diaries[randomIndex];
-    }
-
-    showRandomDiary();
-  </script>
 </body>
 </html>
-
