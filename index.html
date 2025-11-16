@@ -4,35 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Diary</title>
-
 <style>
   body {
     background-color: #fff;
     color: #000;
     font-family: "游ゴシック体", "Yu Gothic", sans-serif;
-    margin: 0;
-    padding: 40px 0; /* 上下にゆとりを持たせる */
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    margin: 0;
   }
 
   #container {
+    text-align: left;
     width: 60%;
     max-width: 700px;
-    min-width: 300px;
     line-height: 1.8;
-    font-size: 15px;
-  }
-
-  img {
-    max-width: 100%; /* スマホでも画像がはみ出ない */
-    height: auto;
-    display: block;
-    margin: 20px 0;
+    font-size: 14px;
+    transform: translateY(-10%);
   }
 
   button {
-    margin-top: 40px;
+    margin-top: 50px;
     background: none;
     border: none;
     color: #888;
@@ -63,7 +58,6 @@
     }
   }
 </style>
-
 </head>
 <body>
 
