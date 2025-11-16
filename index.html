@@ -23,7 +23,7 @@
     max-width: 700px;
     line-height: 1.8;
     font-size: 14px;
-    transform: translateY(-10%);
+    transform: translateY(-10%); /* 本文をやや上に */
   }
 
   button {
@@ -35,33 +35,17 @@
     cursor: pointer;
   }
 
-  /* ===== スマホ対応（幅768px以下） ===== */
-  @media (max-width: 768px) {
-    body {
-      padding: 20px 0;
-      height: auto; /* スマホで縦長になるため解除 */
-      justify-content: flex-start; /* 上から自然に読む形 */
-    }
-
-    #container {
-      width: 90%;
-      max-width: 100%;
-      font-size: 16px;
-      line-height: 1.9;
-      transform: none; /* スマホでは不自然になるので解除 */
-      margin-top: 20px;
-    }
-
-    button {
-      margin-top: 40px;
-      font-size: 14px;
-    }
+  button:hover {
+    color: #444;
   }
 </style>
 </head>
 <body>
+  <div id="container"></div>
+  <button onclick="showRandomDiary()"> ▶︎ </button>
 
-<div id="container">
+  <script>
+    const diaries = [
   
 `2025.6.30<br><br>
 狭い箱のような寝室で、頭を熱くして心臓をどきどきさせながら横たわる夜です。ときおり誰かのはあ、というため息や、足をゴソゴソさせる音が途切れなく聞こえてきます。私は記憶の詰まった袋。私の皮膚はもしかしたら、白いベッドシーツと変わりないのかもしれません。するするとしているし、同時にパリパリと乾燥しています。熱を包んでいるからでしょう。瞼の裏には、記憶の衝突のために火花が散っています。火花は興奮と同時に焦りを誘発し、私の眠りを妨げます。このまま夜が明けるのでしょうか？しかし私が入っている箱は、外の時間から、天気から、情報から遠く隔てられ、それを知る術はありません。どうか時間が経っていますように。その中で、慈悲深い誰かの心の中に、偶然私の名前が浮かびますように。夢中で息をします。まるでそれが祈りでもあるかのように。`,
@@ -183,9 +167,14 @@
 `2025.11.15<br><br>
 どうしてみんな、自分によく似合うものがわかるのだろう？自分の食べたいものがわかるのだろう？自分の望みが、自分の愛するものが？ふるいにかけて、残ったものを信頼する。ふるいとはただの時間であり、私がすることは何もない。待つ。長い汽車の乗車時間に必要なものだけを手に入れる。耐える時間を少し和らげてくれるものだけ。私の舌を少し甘くしてくれるもの。額を冷やしてくれるもの。何か少し書き留めるもの。私が考えるだけの機械として生まれたのだったら。頭の中で、他の人が思いつかないというだけの無益な考え、意外なインスピレーションを生み出して、それを書き留めるだけの存在であったなら。私の存在は十分であるだろうか？粉砂糖のかかったクッキーを食べるだけの十分な理由。名前を呼ぶ声を聞き、その合唱に恐怖しながら過ごす夕べ。 用意された運命をこなすだけでこんなに時間がかかるなんて。野菜を蒸す時間すら惜しい。夜は眠る。指輪を外し、意識を手放す。`
 
-</div>
+];
 
-<button onclick="history.back()">back</button>
+    function showRandomDiary() {
+      const randomIndex = Math.floor(Math.random() * diaries.length);
+      document.getElementById('container').innerHTML = diaries[randomIndex];
+    }
 
+    showRandomDiary();
+  </script>
 </body>
 </html>
