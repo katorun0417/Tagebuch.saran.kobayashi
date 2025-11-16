@@ -38,6 +38,32 @@
   button:hover {
     color: #444;
   }
+
+  /* ===== スマホ対応（幅768px以下） ===== */
+@media (max-width: 768px) {
+
+  body {
+    height: auto;              /* スマホの縦長に合わせて自然に伸ばす */
+    padding: 40px 0 80px;      /* 上下に余白・PC には影響しない */
+    display: flex;             /* PC と同じ flex に戻す */
+    justify-content: flex-start; /* スマホは自然に上から読み始める */
+  }
+
+  #container {
+    width: 90%;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.9;
+    transform: none;           /* スマホでは上と重なるので解除 */
+    margin-top: 20px;
+  }
+
+  button {
+    margin: 60px auto 0;
+    font-size: 16px;
+    padding: 12px 20px;
+  }
+}
 </style>
 </head>
 <body>
