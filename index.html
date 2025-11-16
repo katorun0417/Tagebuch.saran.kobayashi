@@ -41,30 +41,27 @@
   }
 
   /* ===== スマホ対応（幅768px以下） ===== */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
+    body {
+      padding: 20px 0;
+      height: auto; /* スマホで縦長になるため解除 */
+      justify-content: flex-start; /* 上から自然に読む形 */
+    }
 
-  body {
-    height: auto;               /* 100vh を解除 */
-    padding: 40px 0 80px;       /* 上下に十分な余白を確保 */
-    display: block;             /* Flex の中央寄せを解除 */
-  }
+    #container {
+      width: 90%;
+      max-width: 100%;
+      font-size: 16px;
+      line-height: 1.9;
+      transform: none; /* スマホでは不自然になるので解除 */
+      margin-top: 20px;
+    }
 
-  #container {
-    width: 90%;
-    max-width: 100%;
-    font-size: 16px;
-    line-height: 1.9;
-    transform: none;
-    margin: 0 auto;             /* 中央寄せ */
+    button {
+      margin-top: 40px;
+      font-size: 14px;
+    }
   }
-
-  button {
-    display: block;
-    margin: 60px auto 0;        /* 上に余白＋中央に配置 */
-    font-size: 16px;
-    padding: 12px 20px;         /* タップしやすく */
-  }
-}
 </style>
 
 </head>
