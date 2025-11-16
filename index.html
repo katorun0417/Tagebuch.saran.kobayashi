@@ -40,23 +40,31 @@
     cursor: pointer;
   }
 
-  /* ===== スマホ最適化 ===== */
-  @media (max-width: 600px) {
-    body {
-      padding: 20px; /* スマホは左右余白も必要 */
-    }
+  /* ===== スマホ対応（幅768px以下） ===== */
+@media (max-width: 768px) {
 
-    #container {
-      width: 100%;
-      line-height: 1.9;
-      font-size: 16px;  /* 読みやすい文字サイズ */
-    }
-
-    button {
-      margin-top: 30px;
-      font-size: 13px;
-    }
+  body {
+    height: auto;               /* 100vh を解除 */
+    padding: 40px 0 80px;       /* 上下に十分な余白を確保 */
+    display: block;             /* Flex の中央寄せを解除 */
   }
+
+  #container {
+    width: 90%;
+    max-width: 100%;
+    font-size: 16px;
+    line-height: 1.9;
+    transform: none;
+    margin: 0 auto;             /* 中央寄せ */
+  }
+
+  button {
+    display: block;
+    margin: 60px auto 0;        /* 上に余白＋中央に配置 */
+    font-size: 16px;
+    padding: 12px 20px;         /* タップしやすく */
+  }
+}
 </style>
 
 </head>
