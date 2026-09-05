@@ -16,14 +16,14 @@
     align-items: center;
     margin: 0;
   }
-} 
+
   #container {
     text-align: left;
     width: 60%;
     max-width: 700px;
     line-height: 1.8;
     font-size: 14px;
-    transform: translateY(-10%); /* 本文をやや上に */
+    transform: translateY(-10%);
   }
 
   button {
@@ -39,42 +39,42 @@
     color: #444;
   }
 
+  #copyright {
+    position: fixed;
+    bottom: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #dddddd;
+    font-size: 11pt;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+
   /* ===== スマホ対応（幅768px以下） ===== */
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
 
-  body {
-    height: auto;              /* スマホの縦長に合わせて自然に伸ばす */
-    padding: 40px 0 80px;      /* 上下に余白・PC には影響しない */
-    display: flex;             /* PC と同じ flex に戻す */
-    justify-content: flex-start; /* スマホは自然に上から読み始める */
+    body {
+      height: auto;
+      padding: 40px 0 80px;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    #container {
+      width: 90%;
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 1.7;
+      transform: none;
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 60px auto 0;
+      font-size: 16px;
+      padding: 12px 20px;
+    }
   }
-
-  #container {
-    width: 90%;
-    max-width: 100%;
-    font-size: 14px;
-    line-height: 1.7;
-    transform: none;           /* スマホでは上と重なるので解除 */
-    margin-top: 20px;
-  }
-
-  button {
-    margin: 60px auto 0;
-    font-size: 16px;
-    padding: 12px 20px;
-  }
-
-#copyright {
-  position: fixed;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #c4c4c4;
-  font-size: 10px;
-  font-weight: 400;
-  white-space: nowrap;
-}
-  
 </style>
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4500GB9GP2"></script>
